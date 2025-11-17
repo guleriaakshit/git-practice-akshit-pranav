@@ -1,14 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Contact Us</title>
-</head>
+  <body>
+    <h1>Contact Us</h1>
+    <!-- Form will go here -->
+    <form id="contactForm" novalidate>
+      <div class="grid">
+        <div class="row">
+          <label for="name">Your name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder="Alex Kim"
+          />
+        </div>
 
-<body>
-  <h1>Contact Us</h1>
-  <!-- Form will go here -->
-</body>
+        <div class="row">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="alex@company.com"
+          />
+        </div>
 
+        <div class="row">
+          <label for="company">Company (optional)</label>
+          <input
+            id="company"
+            name="company"
+            type="text"
+            placeholder="Acme Inc."
+          />
+        </div>
+
+        <div class="row">
+          <label for="projectType">Project type</label>
+          <select id="projectType" name="projectType">
+            <option value="general">General question</option>
+            <option value="partnership">Partnership / collaboration</option>
+            <option value="bug">Bug report</option>
+            <option value="feature">Feature request</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="subject">Subject</label>
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          required
+          placeholder="Add header component"
+        />
+      </div>
+
+      <div class="row">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          placeholder="Describe your request, goals, links, or steps to reproduce a bug..."
+        ></textarea>
+      </div>
+
+      <!-- Honeypot field to reduce spam (hidden from users) -->
+      <div style="display: none">
+        <label>Leave this empty</label>
+        <input name="gotcha" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="row">
+        <label style="display: flex; gap: 8px; align-items: center"
+          ><input id="consent" name="consent" type="checkbox" required />
+          <span>Consent to contact me regarding this inquiry</span></label
+        >
+        <div class="hint">
+          We will only use your email to reply. By submitting you agree to our
+          privacy policy.
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="submitBtn" type="submit">Send message</button>
+        <button id="resetBtn" type="button" class="secondary">Reset</button>
+        <div id="spinner" aria-hidden style="display: none; margin-left: 8px">
+          Sending…
+        </div>
+      </div>
+
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+  </body>
 </html>
