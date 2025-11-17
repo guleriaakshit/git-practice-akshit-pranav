@@ -1,5 +1,5 @@
 # Team rules
 
-1. always ksebfjksbievbf
+1. This is a rule.
 
-2. oseh flks ndik hf9
+2. This is another rule.
